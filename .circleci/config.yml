@@ -14,3 +14,4 @@ jobs:
           docker build -t mikeskuse/microservice-one:$TAG .
           docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push mikeskuse/microservice-one:$TAG
+          az login -u $AZURE_USER -p $AZURE_PASSWORD
