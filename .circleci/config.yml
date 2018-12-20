@@ -14,7 +14,7 @@ jobs:
           docker build -t mikeskuse/microservice-one:$TAG .
           docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push mikeskuse/microservice-one:$TAG
-          az login --service-principal --username $AZURE_USER --password $AZURE_PASSWORD --tennant $TENNANT_ID
+          az login --service-principal --username $AZURE_USER --password $AZURE_PASS --tennant $TENNANT_ID
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1
           # sed "s/:0.1.12/:$TAG/"" <microservice-one.yaml >microservice-one-updated.yaml
           # cat microservice-one-updated.yaml
