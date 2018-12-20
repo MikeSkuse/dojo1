@@ -18,5 +18,5 @@ jobs:
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1
           sed "s/:0.1.12/:$TAG/" <microservice-one.yaml >microservice-one-updated.yaml
           cat microservice-one-updated.yaml
-          # kubectl apply -f microservice-one-service.yaml
-          # kubectl apply -f microservice-one-updated.yaml
+          kubectl apply -f microservice-one-service.yaml
+          kubectl apply -f microservice-one-updated.yaml
