@@ -16,6 +16,7 @@ jobs:
           docker push mikeskuse/microservice-one:$TAG
           az login --service-principal -username $AZURE_USER -password $AZURE_PASSWORD --tennant $TENNANT_ID
           az aks get-credentials --resource-group 'acctestRG1' --name 'acctestaks1'
+          kubectl config view
           # sed "s/:0.1.12/:$TAG/"" <microservice-one.yaml >microservice-one-updated.yaml
           # cat microservice-one-updated.yaml
           # kubectl apply -f microservice-one-service.yaml
