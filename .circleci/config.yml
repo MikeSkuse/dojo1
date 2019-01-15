@@ -14,15 +14,15 @@ jobs:
           docker build -t mikeskuse/microservice-one:$TAG .
           docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push mikeskuse/microservice-one:$TAG
-          az login --service-principal --username $AZURE_USER --password $AZURE_PASS --tenant $TENNANT_ID
-          az aks get-credentials --resource-group acctestRG1 --name acctestaks1
-          sed "s/:0.1.12/:$TAG/" <microservice-one.yaml >microservice-one-updated.yaml
-          mkdir /tmp/artifacts
-          cp microservice-one-service.yaml /tmp/artifacts/
-          cp microservice-one-updated.yaml /tmp/artifacts/
-          cp microservice-one.yaml /tmp/artifacts/
+          #az login --service-principal --username $AZURE_USER --password $AZURE_PASS --tenant $TENNANT_ID
+          #az aks get-credentials --resource-group acctestRG1 --name acctestaks1
+          #sed "s/:0.1.12/:$TAG/" <microservice-one.yaml >microservice-one-updated.yaml
+          #mkdir /tmp/artifacts
+          #cp microservice-one-service.yaml /tmp/artifacts/
+          #cp microservice-one-updated.yaml /tmp/artifacts/
+          #cp microservice-one.yaml /tmp/artifacts/
           #cat microservice-one-updated.yaml
-          kubectl apply -f microservice-one-service.yaml
-          kubectl apply -f microservice-one-updated.yaml
-      - store_artifacts:
-          path: /tmp/artifacts
+          #kubectl apply -f microservice-one-service.yaml
+          #kubectl apply -f microservice-one-updated.yaml
+#      - store_artifacts:
+#          path: /tmp/artifacts
